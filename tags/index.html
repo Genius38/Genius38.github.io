@@ -6,17 +6,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
-  <title>tags | 搭积木算命</title>
+  <title>Tagcloud | 搭积木算命</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="黑箱的力量无人知晓">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
+<meta property="og:title" content="Tagcloud">
 <meta property="og:url" content="http://yoursite.com/tags/index.html">
 <meta property="og:site_name" content="搭积木算命">
 <meta property="og:description" content="黑箱的力量无人知晓">
-<meta property="og:updated_time" content="2017-10-28T14:32:37.872Z">
+<meta property="og:updated_time" content="2017-10-28T14:34:22.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="Tagcloud">
 <meta name="twitter:description" content="黑箱的力量无人知晓">
   
     <link rel="alternate" href="/atom.xml" title="搭积木算命" type="application/atom+xml">
@@ -103,91 +103,78 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <!--翻页-->
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
+          <style>
+    .categories-title {
+        margin-top: 85px;
     }
 
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
+    .categories-title strong {
+        padding: 0 10px 5px;
+        text-transform: capitalize;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
     }
 
-    .post-avatar {
-        height: 30px;
-        width: 30px;
+    .categories-box {
+        min-height: 90vh;
+    }
+
+    .categories-inner {
+        flex-wrap: wrap;
+        min-height: 350px;
+    }
+
+    .category-link, .tag-link {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 80px;
+        width: 80px;
+        padding: 12px;
+        margin: 15px;
         border-radius: 50%;
+
+        color: #FFF;
+        background-color: #00d1b2;
     }
 
-    .flow-chart {
-        text-align: center;
+    .category-count, .tag-count {
+        position: absolute;
+        top:0;
+        right: 5px;
+
+        display: flex;
+        align-items:center;
+        justify-content: center;
+
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: black;
     }
 
-    img[alt="post-cover"] {
-        display: none;
-    }
 </style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>tags</strong>
-            </h1>
-            
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> Genius38</span>
-                <span class="post-date sub-title">at: 2017-10-28</span>
-            </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            
-        </div>
-        <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
-                    <script type="text/javascript">
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                <!-- City版安装代码已完成 -->
-            
-            
-        </div>
+<div class="container categories-box">
+    <div class="content categories-title">
+        <h1 class="has-text-centered"><strong>Tagcloud</strong></h1>
     </div>
-</section>
+    <div class="categories-inner is-flex center">
+        
+            <h2>Tagcloud is Empty</h2>
+        
+    </div>
+</div>
 <script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
-
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
+    //    var allItem = document.querySelectorAll('.category-list-item')
+    //    allItem.forEach(function (item, index) {
+    //        var containerWidth = 80
+    //        var itemChilds = item.querySelectorAll('.category-list-child')
+    //        item.style.width = containerWidth * itemChilds.length + 'px'
+    //        item.classList.add('debug')
+    //    })
 </script>
       </div>
   </div>
