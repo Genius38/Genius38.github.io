@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>Tensorflow 简明教程1：安装 | 搭积木算命</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
+<meta name="keywords" content="Tensorflow,install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow 简明教程1：安装">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/tensorflow-gpu-install/index.html">
+<meta property="og:site_name" content="搭积木算命">
+<meta property="og:description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfec7l2jj30qt0gxmyi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyffzp2m9j30jq0b6dgr.jpg">
+<meta property="og:updated_time" content="2017-10-28T16:43:03.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tensorflow 简明教程1：安装">
+<meta name="twitter:description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="搭积木算命" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">Genius38</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/about">
+                About
+            </a>
+            
+            <a class="nav-item" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item" href="/categories">
+                Categories
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/about">
+                About
+            </a>
+            
+            <a class="nav-item flex-1" href="/tags">
+                Tags
+            </a>
+            
+            <a class="nav-item flex-1" href="/categories">
+                Categories
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>Tensorflow 简明教程1：安装</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Genius38</span>
+                <span class="post-date sub-title">at: 2017-10-29</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/Tensorflow/">Tensorflow</a>
+                    
+                         <a class="tag is-post-tag" href="/tags/install/">install</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><p><strong>Alienware 15R3， GTX 1060 6G， Windows 10</strong></p>
+<p>所以接下来的步骤均为 <strong>Windows</strong> 用户的视角，Linux 用户请自行迁移。</p>
+<h2 id="搭梯子"><a href="#搭梯子" class="headerlink" title="搭梯子"></a>搭梯子</h2><p>1， <strong>Shadowsocks</strong> + <strong>Linode</strong> 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。</p>
+<p>2， <strong>SwitchyOmega</strong> 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代理规则可以添加如下维护的地址列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</div></pre></td></tr></table></figure></p>
+<p>3， <strong>Proxifier</strong> 代理 python 和 pip，但是要记得设置 local rule给 Chrome 防止循环代理。</p>
+<h2 id="安装-Tensorflow"><a href="#安装-Tensorflow" class="headerlink" title="安装 Tensorflow"></a>安装 Tensorflow</h2><p>由于 Tensorflow 网站结构或安装方式总是变化，所以不再给出详细安装过程。</p>
+<p><a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow 官方网站</a></p>
+<p><a href="https://www.tensorflow.org/install/install_windows" target="_blank" rel="external">Tensorflow 官方安装教程</a></p>
+<p>Windows 用户需要在 uci 的网站上下载 Windows 专用的 Package，目前已知 <strong>Numpy</strong> 和 <strong>Scipy</strong> 不能直接用 PIP 安装。</p>
+<p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="external">Unofficial Windows Binaries for Python Extension Packages</a></p>
+<p>不喜欢打乱本机环境的话 Anacoda3 也可以，只要挂了 <strong>Proxifier</strong> 就可以使用 <strong>conda install</strong> 来安装 Tensorflow。</p>
+<h2 id="安装-CUDA"><a href="#安装-CUDA" class="headerlink" title="安装 CUDA"></a>安装 CUDA</h2><p><strong>亲测 CUDA 9.0 不能正常工作</strong>，所以需要安装 <strong>CUDA 8.0</strong> 来支持 Tensorflow-GPU。</p>
+<p>进入 CUDA 的下载地址，这个网页会默认引导下载最新版本的 CUDA，根据 nvidia 官方的回答：</p>
+<p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">https://developer.nvidia.com/cuda-downloads</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scroll to the bottom of the page you linked, and click on &quot;Legacy Releases&quot;</div><div class="line">Posted 09/28/2017 02:54 PM</div></pre></td></tr></table></figure></p>
+<p>找到 CUDA 8.0 版本下载链接，根据提示选择系统和安装包格式：</p>
+<p><a href="https://developer.nvidia.com/cuda-80-ga2-download-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-80-ga2-download-archive</a></p>
+<p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg" alt=""></p>
+<p>下载完成后直接根据提示安装，记得勾选 <strong>ADD TO PATH</strong>，这样就不用手动设置系统变量。</p>
+<h2 id="安装-CUDNN"><a href="#安装-CUDNN" class="headerlink" title="安装 CUDNN"></a>安装 CUDNN</h2><p><strong>CUDNN</strong> 必须要是注册会员且填写过调查问卷才能下载使用，本账号已完成过这一流程，直接进入下载地址，找到 <strong>CUDA 8.0</strong> 对应的版本:</p>
+<p><a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="external">https://developer.nvidia.com/rdp/cudnn-download</a></p>
+<p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfec7l2jj30qt0gxmyi.jpg" alt=""></p>
+<p>下载解压之后是三个文件夹：<strong>bin、include、lib</strong>，将其 <strong>解压到 CUDA 所在的文件夹</strong>，与原有的这三个文件夹 <strong>合并</strong>。</p>
+<p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyffzp2m9j30jq0b6dgr.jpg" alt=""></p>
+<p>至此就安装完毕了。</p>
+<h2 id="测试-Tensorflow-GPU"><a href="#测试-Tensorflow-GPU" class="headerlink" title="测试 Tensorflow-GPU"></a>测试 Tensorflow-GPU</h2><p>运行官方 DEMO，其中 <strong>os.environ[‘TF_CPP_MIN_LOG_LEVEL’]</strong> 是减少 CUDA 的额外输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></div><div class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:0'</span>):</div><div class="line">    a = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], shape=[<span class="number">2</span>, <span class="number">3</span>], name=<span class="string">'a'</span>)</div><div class="line">    b = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], shape=[<span class="number">3</span>, <span class="number">2</span>], name=<span class="string">'b'</span>)</div><div class="line">    c = tf.matmul(a, b)</div><div class="line"><span class="comment"># Creates a session with log_device_placement set to True.</span></div><div class="line">sess = tf.Session(config=tf.ConfigProto(log_device_placement=<span class="keyword">True</span>))</div><div class="line"><span class="comment"># Runs the op.</span></div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
+<p>运行结果如下，显示出已经<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">C:\Python36\python.exe D:/GitHub/DeepLearning/deep_neural_network/test_device.py</div><div class="line">Device mapping:</div><div class="line">/job:localhost/replica:0/task:0/gpu:0 -&gt; device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0</div><div class="line">MatMul: (MatMul): /job:localhost/replica:0/task:0/gpu:0</div><div class="line">b: (Const): /job:localhost/replica:0/task:0/gpu:0</div><div class="line">a: (Const): /job:localhost/replica:0/task:0/gpu:0</div><div class="line">[[ 22.  28.]</div><div class="line"> [ 49.  64.]]</div><div class="line"></div><div class="line">Process finished with exit code 0</div></pre></td></tr></table></figure></p>
+<hr>
+<p>如果对 <strong>CUDA 额外输出</strong> 好奇，如下显示，其中较为有用的信息是 <strong>所使用的显存</strong>，如果对默认分配不满意，可以通过 Tensorflow 自带的函数去调整，这会在接下来的教程中讲到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">2017-10-29 00:38:18.874677: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&apos;t compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.</div><div class="line">2017-10-29 00:38:18.875072: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn&apos;t compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.</div><div class="line">2017-10-29 00:38:19.249962: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:</div><div class="line">name: GeForce GTX 1060</div><div class="line">major: 6 minor: 1 memoryClockRate (GHz) 1.6705</div><div class="line">pciBusID 0000:01:00.0</div><div class="line">Total memory: 6.00GiB</div><div class="line">Free memory: 5.01GiB</div><div class="line">2017-10-29 00:38:19.250232: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0</div><div class="line">2017-10-29 00:38:19.250363: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y</div><div class="line">2017-10-29 00:38:19.250520: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0)</div><div class="line">Device mapping:</div><div class="line"></div><div class="line">2017-10-29 00:38:19.506556: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\direct_session.cc:300] Device mapping:</div><div class="line">/job:localhost/replica:0/task:0/gpu:0 -&gt; device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0</div><div class="line"></div><div class="line">2017-10-29 00:38:19.508447: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\simple_placer.cc:872] MatMul: (MatMul)/job:localhost/replica:0/task:0/gpu:0</div><div class="line">2017-10-29 00:38:19.508624: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\simple_placer.cc:872] b: (Const)/job:localhost/replica:0/task:0/gpu:0</div><div class="line">2017-10-29 00:38:19.508833: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\36\tensorflow\core\common_runtime\simple_placer.cc:872] a: (Const)/job:localhost/replica:0/task:0/gpu:0</div></pre></td></tr></table></figure>
+
+        </div>
+        <div class="post-reply">
+            
+            
+            <div id="disqus_thread" style="width: 80%; margin: 0 auto;"></div>
+                <script>
+
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                     var disqus_config = function () {
+                     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                     };
+                     */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://haojen.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © Genius38 2017
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/search_core.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
