@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfec7l2jj30qt0gxmyi.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyffzp2m9j30jq0b6dgr.jpg">
-<meta property="og:updated_time" content="2017-10-28T16:43:03.096Z">
+<meta property="og:updated_time" content="2017-10-28T18:02:21.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow 简明教程1：安装">
 <meta name="twitter:description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
@@ -378,16 +378,18 @@
 <p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="external">Unofficial Windows Binaries for Python Extension Packages</a></p>
 <p>不喜欢打乱本机环境的话 Anacoda3 也可以，只要挂了 <strong>Proxifier</strong> 就可以使用 <strong>conda install</strong> 来安装 Tensorflow。</p>
 <h2 id="安装-CUDA"><a href="#安装-CUDA" class="headerlink" title="安装 CUDA"></a>安装 CUDA</h2><p><strong>亲测 CUDA 9.0 不能正常工作</strong>，所以需要安装 <strong>CUDA 8.0</strong> 来支持 Tensorflow-GPU。</p>
-<p>进入 CUDA 的下载地址，这个网页会默认引导下载最新版本的 CUDA，根据 nvidia 官方的回答：</p>
-<p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">https://developer.nvidia.com/cuda-downloads</a><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scroll <span class="keyword">to</span> the bottom of the<span class="built_in"> page </span>you linked, <span class="keyword">and</span> click on <span class="string">"Legacy Releases"</span></div><div class="line">Posted 09/28/2017 02:54 PM</div></pre></td></tr></table></figure></p>
-<p>找到 CUDA 8.0 版本下载链接，根据提示选择系统和安装包格式：</p>
+<p>进入 CUDA 的下载地址，这个网页会默认引导下载最新版本的 CUDA:</p>
+<p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">https://developer.nvidia.com/cuda-downloads</a></p>
+<p>根据 nvidia 官方的回答：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scroll <span class="keyword">to</span> the bottom of the<span class="built_in"> page </span>you linked, <span class="keyword">and</span> click on <span class="string">"Legacy Releases"</span></div></pre></td></tr></table></figure>
+<p>将页面拉到底，找到 CUDA 8.0 版本下载链接，根据提示选择系统和安装包格式：</p>
 <p><a href="https://developer.nvidia.com/cuda-80-ga2-download-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-80-ga2-download-archive</a></p>
 <p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg" alt=""></p>
 <p>下载完成后直接根据提示安装，记得勾选 <strong>ADD TO PATH</strong>，这样就不用手动设置系统变量。</p>
 <h2 id="安装-CUDNN"><a href="#安装-CUDNN" class="headerlink" title="安装 CUDNN"></a>安装 CUDNN</h2><p><strong>CUDNN</strong> 必须要是注册会员且填写过调查问卷才能下载使用，本账号已完成过这一流程，直接进入下载地址，找到 <strong>CUDA 8.0</strong> 对应的版本:</p>
 <p><a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="external">https://developer.nvidia.com/rdp/cudnn-download</a></p>
 <p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfec7l2jj30qt0gxmyi.jpg" alt=""></p>
-<p>下载解压之后是三个文件夹：<strong>bin、include、lib</strong>，将其 <strong>解压到 CUDA 所在的文件夹</strong>，与原有的这三个文件夹 <strong>合并</strong>。</p>
+<p>下载解压之后是三个文件夹：<strong>bin、include、lib</strong>，将其 <strong>解压到 CUDA 所在的文件夹</strong>，与原有的这三个文件夹 <strong>合并</strong>：</p>
 <p><img src="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyffzp2m9j30jq0b6dgr.jpg" alt=""></p>
 <p>至此就安装完毕了。</p>
 <h2 id="测试-Tensorflow-GPU"><a href="#测试-Tensorflow-GPU" class="headerlink" title="测试 Tensorflow-GPU"></a>测试 Tensorflow-GPU</h2><p>运行官方 DEMO，其中 <strong>os.environ[‘TF_CPP_MIN_LOG_LEVEL’]</strong> 是减少 CUDA 的额外输出：</p>
