@@ -87,14 +87,15 @@
 <meta property="og:site_name" content="搭积木算命">
 <meta property="og:description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/92074553gy1fkyy39rn3xj20ee02mq2t.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfec7l2jj30qt0gxmyi.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyffzp2m9j30jq0b6dgr.jpg">
-<meta property="og:updated_time" content="2017-10-29T03:05:37.240Z">
+<meta property="og:updated_time" content="2017-10-29T03:16:10.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow 简明教程1：安装">
 <meta name="twitter:description" content="系统环境Alienware 15R3， GTX 1060 6G， Windows 10 所以接下来的步骤均为 Windows 用户的视角，Linux 用户请自行迁移。 搭梯子1， Shadowsocks + Linode 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。 2， SwitchyOmega 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/005LQ8dWgy1fkyfcivdsej30i90pi75u.jpg">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/92074553gy1fkyy39rn3xj20ee02mq2t.jpg">
 
 
 
@@ -371,6 +372,11 @@
 <h2 id="搭梯子"><a href="#搭梯子" class="headerlink" title="搭梯子"></a>搭梯子</h2><p>1， <strong>Shadowsocks</strong> + <strong>Linode</strong> 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。</p>
 <p>2， <strong>SwitchyOmega</strong> 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代理规则可以添加如下维护的地址列表：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/gfwlist/g</span>fwlist<span class="regexp">/master/g</span>fwlist.txt</div></pre></td></tr></table></figure></p>
 <p>3， <strong>Proxifier</strong> 代理 python 和 pip，但是要记得给 <strong>Chrome 以及云音乐之类的国内应用</strong> 设置 <strong>Direct rule</strong> 防止循环代理和服务失效。</p>
+<h2 id="安装-Python"><a href="#安装-Python" class="headerlink" title="安装 Python"></a>安装 Python</h2><p>在官方网站找到 windows-installer 下载并安装即可。</p>
+<p><a href="https://www.python.org/" target="_blank" rel="external">https://www.python.org/</a></p>
+<p>可能要手动添加两个环境变量，在本机上是：</p>
+<p><img src="https://ws1.sinaimg.cn/large/92074553gy1fkyy39rn3xj20ee02mq2t.jpg" alt=""></p>
+<p>Tensorflow 目前只支持 <strong>3.5</strong> 以上的版本，<strong>截止至发稿时间，Python 仅更新到了 3.6 版本</strong>，若 <strong>3.7</strong> 以上不可用，请回退至 3.6 或 3.5 版本。</p>
 <h2 id="安装-Tensorflow"><a href="#安装-Tensorflow" class="headerlink" title="安装 Tensorflow"></a>安装 Tensorflow</h2><p>由于 Tensorflow 网站结构或安装方式总是变化，所以不再给出详细安装过程。</p>
 <p><a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow 官方网站</a></p>
 <p><a href="https://www.tensorflow.org/install/install_windows" target="_blank" rel="external">Tensorflow 官方安装教程</a></p>
@@ -574,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境"><span class="nav-number">1.</span> <span class="nav-text">系统环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭梯子"><span class="nav-number">2.</span> <span class="nav-text">搭梯子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Tensorflow"><span class="nav-number">3.</span> <span class="nav-text">安装 Tensorflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CUDA"><span class="nav-number">4.</span> <span class="nav-text">安装 CUDA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CUDNN"><span class="nav-number">5.</span> <span class="nav-text">安装 CUDNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试-Tensorflow-GPU"><span class="nav-number">6.</span> <span class="nav-text">测试 Tensorflow-GPU</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境"><span class="nav-number">1.</span> <span class="nav-text">系统环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭梯子"><span class="nav-number">2.</span> <span class="nav-text">搭梯子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Python"><span class="nav-number">3.</span> <span class="nav-text">安装 Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Tensorflow"><span class="nav-number">4.</span> <span class="nav-text">安装 Tensorflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CUDA"><span class="nav-number">5.</span> <span class="nav-text">安装 CUDA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CUDNN"><span class="nav-number">6.</span> <span class="nav-text">安装 CUDNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试-Tensorflow-GPU"><span class="nav-number">7.</span> <span class="nav-text">测试 Tensorflow-GPU</span></a></li></ol></div>
             
 
           </div>
