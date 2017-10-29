@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Deep Learning" />
+  <meta name="keywords" content="Tensorflow," />
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="黑箱的力量无人知晓">
-<meta property="og:type" content="website">
-<meta property="og:title" content="搭积木">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="项目托管https://github.com/Genius38/recurrence-tensorflow 系统环境Alienware 15R3， GTX 1060 6G， Windows 10 概念：计算图图片来自 《Tensorflow for Machine Intelligence》：  在 Tensorflow 中，数据是以计算图的形式进行流动和处理，由于数据在 Tensorflow 中">
+<meta name="keywords" content="Tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow 简明教程 2：构建计算流图">
+<meta property="og:url" content="http://yoursite.com/2017/10/30/tf-build-graph/index.html">
 <meta property="og:site_name" content="搭积木">
-<meta property="og:description" content="黑箱的力量无人知晓">
+<meta property="og:description" content="项目托管https://github.com/Genius38/recurrence-tensorflow 系统环境Alienware 15R3， GTX 1060 6G， Windows 10 概念：计算图图片来自 《Tensorflow for Machine Intelligence》：  在 Tensorflow 中，数据是以计算图的形式进行流动和处理，由于数据在 Tensorflow 中">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://oyjko4mje.bkt.clouddn.com/17-10-29/5365192.jpg">
+<meta property="og:image" content="http://oyjko4mje.bkt.clouddn.com/17-10-29/77346937.jpg">
+<meta property="og:updated_time" content="2017-10-29T09:47:04.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭积木">
-<meta name="twitter:description" content="黑箱的力量无人知晓">
+<meta name="twitter:title" content="Tensorflow 简明教程 2：构建计算流图">
+<meta name="twitter:description" content="项目托管https://github.com/Genius38/recurrence-tensorflow 系统环境Alienware 15R3， GTX 1060 6G， Windows 10 概念：计算图图片来自 《Tensorflow for Machine Intelligence》：  在 Tensorflow 中，数据是以计算图的形式进行流动和处理，由于数据在 Tensorflow 中">
+<meta name="twitter:image" content="http://oyjko4mje.bkt.clouddn.com/17-10-29/5365192.jpg">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/30/tf-build-graph/"/>
 
 
 
 
 
-  <title>搭积木</title>
+  <title>Tensorflow 简明教程 2：构建计算流图 | 搭积木</title>
   
 
 
@@ -143,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,9 +261,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -289,9 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/30/tf-build-graph/" itemprop="url">Tensorflow 简明教程 2：构建计算流图</a></h1>
+          <h1 class="post-title" itemprop="name headline">Tensorflow 简明教程 2：构建计算流图</h1>
         
 
         <div class="post-meta">
@@ -363,9 +365,7 @@
       
 
       
-        
-          
-            <h2 id="项目托管"><a href="#项目托管" class="headerlink" title="项目托管"></a>项目托管</h2><p><a href="https://github.com/Genius38/recurrence-tensorflow" target="_blank" rel="external">https://github.com/Genius38/recurrence-tensorflow</a></p>
+        <h2 id="项目托管"><a href="#项目托管" class="headerlink" title="项目托管"></a>项目托管</h2><p><a href="https://github.com/Genius38/recurrence-tensorflow" target="_blank" rel="external">https://github.com/Genius38/recurrence-tensorflow</a></p>
 <h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><p><strong>Alienware 15R3， GTX 1060 6G， Windows 10</strong></p>
 <h2 id="概念：计算图"><a href="#概念：计算图" class="headerlink" title="概念：计算图"></a>概念：计算图</h2><p>图片来自 <strong>《Tensorflow for Machine Intelligence》</strong>：</p>
 <p><img src="http://oyjko4mje.bkt.clouddn.com/17-10-29/5365192.jpg" alt=""></p>
@@ -409,8 +409,6 @@
 <p>2，对于 Windows 用户，即便在代码中使用了类似 Linux 的<strong>当前目录</strong>标识 <strong>. / </strong>，在 cmd 中启动 Tensorboad 仍然要用绝对路径</p>
 <h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># build_graph.py</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></div><div class="line"></div><div class="line">a = tf.placeholder(tf.int32, shape=[<span class="number">1</span>], name=<span class="string">'input_a'</span>)</div><div class="line">b = tf.placeholder(tf.int32, shape=[<span class="number">1</span>], name=<span class="string">'input_b'</span>)</div><div class="line"></div><div class="line">c = tf.multiply(a, b, name=<span class="string">"mul_c"</span>)</div><div class="line">d = tf.add(a, b, name=<span class="string">"add_d"</span>)</div><div class="line"></div><div class="line">e = tf.add(c, d, name=<span class="string">"add_e"</span>)</div><div class="line"></div><div class="line">sess = tf.Session()</div><div class="line"></div><div class="line">writer = tf.summary.FileWriter(<span class="string">"./my_graph"</span>, sess.graph)</div><div class="line"></div><div class="line">output = sess.run(e, feed_dict=&#123;a: np.array([<span class="number">5</span>], dtype=np.int32),</div><div class="line">                                b: np.array([<span class="number">3</span>], dtype=np.int32)&#125;)</div><div class="line"></div><div class="line">print(output)</div><div class="line"></div><div class="line">writer.close()</div><div class="line">sess.close()</div></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -425,192 +423,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/tensorflow-gpu-install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Genius38">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="搭积木">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/29/tensorflow-gpu-install/" itemprop="url">Tensorflow 简明教程 1：安装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T00:42:36+08:00">
-                2017-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
-                    <span itemprop="name">Tutorial</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Tensorflow/" rel="tag"># Tensorflow</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><p><strong>Alienware 15R3， GTX 1060 6G， Windows 10</strong></p>
-<p>所以接下来的步骤均为 <strong>Windows</strong> 用户的视角，Linux 用户请自行迁移。</p>
-<h2 id="搭梯子"><a href="#搭梯子" class="headerlink" title="搭梯子"></a>搭梯子</h2><p>1， <strong>Shadowsocks</strong> + <strong>Linode</strong> 组建本地代理端口，没有海外信用卡的话可以找国内 Linode 代理商。</p>
-<p>2， <strong>SwitchyOmega</strong> 代理Chrome, 避免有时候无法访问 Tensorflow 官方网站，代理规则可以添加如下维护的地址列表：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/gfwlist/g</span>fwlist<span class="regexp">/master/g</span>fwlist.txt</div></pre></td></tr></table></figure></p>
-<p>3， <strong>Proxifier</strong> 代理 python 和 pip，但是要记得给 <strong>Chrome 以及云音乐之类的国内应用</strong> 设置 <strong>Direct rule</strong> 防止循环代理和服务失效。</p>
-<h2 id="安装-Python"><a href="#安装-Python" class="headerlink" title="安装 Python"></a>安装 Python</h2><p>在官方网站找到 windows-installer 下载并安装即可。</p>
-<p><a href="https://www.python.org/" target="_blank" rel="external">https://www.python.org/</a></p>
-<p>可能要手动添加两个环境变量，在本机上是：</p>
-<p><img src="http://oyjko4mje.bkt.clouddn.com/17-10-29/81062317.jpg" alt=""></p>
-<p>Tensorflow 目前只支持 <strong>3.5</strong> 以上的版本，<strong>截止至发稿时间，Python 仅更新到了 3.6 版本</strong>，若 <strong>3.7</strong> 以上不可用，请回退至 3.6 或 3.5 版本。</p>
-<h2 id="安装-Tensorflow"><a href="#安装-Tensorflow" class="headerlink" title="安装 Tensorflow"></a>安装 Tensorflow</h2><p>由于 Tensorflow 网站结构或安装方式总是变化，所以不再给出详细安装过程。</p>
-<p><a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow 官方网站</a></p>
-<p><a href="https://www.tensorflow.org/install/install_windows" target="_blank" rel="external">Tensorflow 官方安装教程</a></p>
-<p>Windows 用户需要在 uci 的网站上下载 Windows 专用的 Package，目前已知 <strong>Numpy</strong> 和 <strong>Scipy</strong> 不能直接用 PIP 安装。</p>
-<p><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="external">Unofficial Windows Binaries for Python Extension Packages</a></p>
-<p>不喜欢打乱本机环境的话 Anacoda3 也可以，只要挂了 <strong>Proxifier</strong> 就可以使用 <strong>conda install</strong> 来安装 Tensorflow。</p>
-<h2 id="安装-CUDA"><a href="#安装-CUDA" class="headerlink" title="安装 CUDA"></a>安装 CUDA</h2><p><strong>亲测 CUDA 9.0 不能正常工作</strong>，所以需要安装 <strong>CUDA 8.0</strong> 来支持 Tensorflow-GPU。</p>
-<p>进入 CUDA 的下载地址，这个网页会默认引导下载最新版本的 CUDA:</p>
-<p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">https://developer.nvidia.com/cuda-downloads</a></p>
-<p>根据 nvidia 官方的回答：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scroll <span class="keyword">to</span> the bottom of the<span class="built_in"> page </span>you linked, <span class="keyword">and</span> click on <span class="string">"Legacy Releases"</span></div></pre></td></tr></table></figure>
-<p>将页面拉到底，找到 CUDA 8.0 版本下载链接，根据提示选择系统和安装包格式：</p>
-<p><a href="https://developer.nvidia.com/cuda-80-ga2-download-archive" target="_blank" rel="external">https://developer.nvidia.com/cuda-80-ga2-download-archive</a></p>
-<p><img src="http://oyjko4mje.bkt.clouddn.com/17-10-29/73268098.jpg" alt=""></p>
-<p>下载完成后直接根据提示安装，记得勾选 <strong>ADD TO PATH</strong>，这样就不用手动设置系统变量。</p>
-<h2 id="安装-CUDNN"><a href="#安装-CUDNN" class="headerlink" title="安装 CUDNN"></a>安装 CUDNN</h2><p><strong>CUDNN</strong> 必须要是注册会员且填写过调查问卷才能下载使用，本账号已完成过这一流程，直接进入下载地址，找到 <strong>CUDA 8.0</strong> 对应的版本:</p>
-<p><a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="external">https://developer.nvidia.com/rdp/cudnn-download</a></p>
-<p><img src="http://oyjko4mje.bkt.clouddn.com/17-10-29/75757285.jpg" alt=""></p>
-<p>下载解压之后是三个文件夹：<strong>bin、include、lib</strong>，将其 <strong>解压到 CUDA 所在的文件夹</strong>，与原有的这三个文件夹 <strong>合并</strong>：</p>
-<p><img src="http://oyjko4mje.bkt.clouddn.com/17-10-29/87937654.jpg" alt=""></p>
-<p>至此就安装完毕了。</p>
-<h2 id="测试-Tensorflow-GPU"><a href="#测试-Tensorflow-GPU" class="headerlink" title="测试 Tensorflow-GPU"></a>测试 Tensorflow-GPU</h2><p>运行官方 DEMO，其中 <strong>os.environ[‘TF_CPP_MIN_LOG_LEVEL’]</strong> 是减少 CUDA 的额外输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test.py</span></div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> os</div><div class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'2'</span></div><div class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:0'</span>):</div><div class="line">    a = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], shape=[<span class="number">2</span>, <span class="number">3</span>], name=<span class="string">'a'</span>)</div><div class="line">    b = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], shape=[<span class="number">3</span>, <span class="number">2</span>], name=<span class="string">'b'</span>)</div><div class="line">    c = tf.matmul(a, b)</div><div class="line"><span class="comment"># Creates a session with log_device_placement set to True.</span></div><div class="line">sess = tf.Session(config=tf.ConfigProto(log_device_placement=<span class="keyword">True</span>))</div><div class="line"><span class="comment"># Runs the op.</span></div><div class="line">print(sess.run(c))</div></pre></td></tr></table></figure>
-<p>运行结果如下，显示 Tensorflow 与 GPU 都已正常的运作：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="string">C:</span>\Python36\python.exe <span class="string">D:</span><span class="regexp">/GitHub/</span>DeepLearning<span class="regexp">/deep_neural_network/</span>test_device.py</div><div class="line">Device <span class="string">mapping:</span></div><div class="line"><span class="regexp">/job:localhost/</span><span class="string">replica:</span><span class="number">0</span><span class="regexp">/task:0/</span><span class="string">gpu:</span><span class="number">0</span> -&gt; <span class="string">device:</span> <span class="number">0</span>, <span class="string">name:</span> GeForce GTX <span class="number">1060</span>, pci bus <span class="string">id:</span> <span class="number">0000</span>:<span class="number">01</span>:<span class="number">00.0</span></div><div class="line"><span class="string">MatMul:</span> (MatMul): <span class="regexp">/job:localhost/</span><span class="string">replica:</span><span class="number">0</span><span class="regexp">/task:0/</span><span class="string">gpu:</span><span class="number">0</span></div><div class="line"><span class="string">b:</span> (Const): <span class="regexp">/job:localhost/</span><span class="string">replica:</span><span class="number">0</span><span class="regexp">/task:0/</span><span class="string">gpu:</span><span class="number">0</span></div><div class="line"><span class="string">a:</span> (Const): <span class="regexp">/job:localhost/</span><span class="string">replica:</span><span class="number">0</span><span class="regexp">/task:0/</span><span class="string">gpu:</span><span class="number">0</span></div><div class="line">[[ <span class="number">22.</span>  <span class="number">28.</span>]</div><div class="line"> [ <span class="number">49.</span>  <span class="number">64.</span>]]</div><div class="line"></div><div class="line">Process finished with exit code <span class="number">0</span></div></pre></td></tr></table></figure></p>
-<hr>
-<p>如果对 <strong>CUDA 额外输出</strong> 好奇，如下显示，可以得到一些硬件信息：</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">2017-10-29 00:38:18.874677: W C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\p</span>latform<span class="symbol">\c</span>pu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.</div><div class="line">2017-10-29 00:38:18.875072: W C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\p</span>latform<span class="symbol">\c</span>pu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.</div><div class="line">2017-10-29 00:38:19.249962: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\g</span>pu<span class="symbol">\g</span>pu_device.cc:955] Found device 0 with properties:</div><div class="line">name: GeForce GTX 1060</div><div class="line">major: 6 minor: 1 memoryClockRate (GHz) 1.6705</div><div class="line">pciBusID 0000:01:00.0</div><div class="line">Total memory: 6.00GiB</div><div class="line">Free memory: 5.01GiB</div><div class="line">2017-10-29 00:38:19.250232: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\g</span>pu<span class="symbol">\g</span>pu_device.cc:976] DMA: 0</div><div class="line">2017-10-29 00:38:19.250363: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\g</span>pu<span class="symbol">\g</span>pu_device.cc:986] 0:   Y</div><div class="line">2017-10-29 00:38:19.250520: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\g</span>pu<span class="symbol">\g</span>pu_device.cc:1045] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0)</div><div class="line">Device mapping:</div><div class="line"></div><div class="line">2017-10-29 00:38:19.506556: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\d</span>irect_session.cc:300] Device mapping:</div><div class="line">/job:localhost/replica:0/task:0/gpu:0 -&gt; device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0</div><div class="line"></div><div class="line">2017-10-29 00:38:19.508447: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\s</span>imple_placer.cc:872] MatMul: (MatMul)/job:localhost/replica:0/task:0/gpu:0</div><div class="line">2017-10-29 00:38:19.508624: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\s</span>imple_placer.cc:872] b: (Const)/job:localhost/replica:0/task:0/gpu:0</div><div class="line">2017-10-29 00:38:19.508833: I C:<span class="symbol">\t</span>f_jenkins<span class="symbol">\h</span>ome<span class="symbol">\w</span>orkspace<span class="symbol">\r</span>el-win<span class="symbol">\M</span><span class="symbol">\w</span>indows-gpu<span class="symbol">\P</span>Y<span class="symbol">\3</span>6<span class="symbol">\t</span>ensorflow<span class="symbol">\c</span>ore<span class="symbol">\c</span>ommon_runtime<span class="symbol">\s</span>imple_placer.cc:872] a: (Const)/job:localhost/replica:0/task:0/gpu:0</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/29/tensorflow-gpu-install/" rel="next" title="Tensorflow 简明教程 1：安装">
+                <i class="fa fa-chevron-left"></i> Tensorflow 简明教程 1：安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -620,10 +462,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -631,6 +474,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -651,8 +498,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -732,6 +588,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目托管"><span class="nav-number">1.</span> <span class="nav-text">项目托管</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统环境"><span class="nav-number">2.</span> <span class="nav-text">系统环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念：计算图"><span class="nav-number">3.</span> <span class="nav-text">概念：计算图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造第一个计算图"><span class="nav-number">4.</span> <span class="nav-text">构造第一个计算图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算图可视化"><span class="nav-number">5.</span> <span class="nav-text">计算图可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">6.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">7.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -872,6 +744,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -927,26 +803,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
